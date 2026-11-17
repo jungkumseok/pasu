@@ -1,0 +1,42 @@
+{
+  "name": "pasu",
+  "version": "1.0.0",
+  "description": "Self-hosted process supervisor with a web UI and password + authenticator login",
+  "keywords": [
+    "process-manager",
+    "supervisor",
+    "daemon",
+    "watchdog",
+    "self-hosted",
+    "dashboard",
+    "web-ui",
+    "totp",
+    "systemd",
+    "pm2-alternative"
+  ],
+  "license": "MIT",
+  "author": "Kumseok Jung <jungkumseok@gmail.com>",
+  "type": "module",
+  "bin": {
+    "pasu": "src/server.js"
+  },
+  "files": [
+    "src/",
+    "public/",
+    "scripts/service.sh"
+  ],
+  "scripts": {
+    "start": "node src/server.js",
+    "test": "node --test --test-concurrency=1 test/*.test.js"
+  },
+  "os": [
+    "linux"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "nodemailer": "10.3.1",
+    "qrcode": "1.5.4"
+  }
+}
