@@ -1,13 +1,35 @@
 # Pasu
 
-A single-user process watchdog with a web UI. Register commands, see whether they're running,
-start/stop/restart them, tail their logs, watch their CPU and memory, and have them restarted
-automatically when they exit.
-Signing in takes a password plus a code from any authenticator app (TOTP).
+**Your processes, kept alive. Your servers, in your pocket.**
 
-Pasu is one package, with two small dependencies: the supervisor and the web UI in one Node process,
-with no database, no build step and no separate daemon. Processes keep running while Pasu
-restarts or upgrades.
+Are you a solo dev running a handful of servers of your own? An API here, a bot there, a side
+project or three that you'd really like to stay up?
+
+You want a watchdog that restarts things when they crash, and tells you when they do. But you
+don't want Kubernetes, a container platform, or a paid cloud dashboard just to keep a few commands
+running.
+
+**Pasu is a no-frills, minimal watchdog with just the conveniences you need.** Install it with one
+command, open it in your browser, and point it at the commands you want kept alive.
+
+- 🔐 **Usable security, built in.** Sign in with a password plus a code from any authenticator
+  app (TOTP). Failed attempts are rate-limited and it serves HTTPS on its own, so it's built to be
+  reached over the internet (see [Security notes](#security-notes) for how to lock it down further).
+- 🌐 **Manage from anywhere you have a browser.** Add, edit, start, stop and restart processes
+  from your laptop or your phone. No SSH, no config files.
+- 🔁 **Crashes handled for you.** Processes marked *Keep running* restart automatically, with
+  backoff so a crash loop doesn't hammer your server.
+- 📧 **Email notifications to yourself.** Get an email when a process fails, with what happened
+  and its last lines of output. Crash loops are grouped, so your inbox stays sane.
+- 📜 **See what your processes are saying.** A live log viewer for each process's output.
+- 📊 **See what they're using.** Live CPU and memory for each process and everything it spawns,
+  with charts of the last 15 minutes.
+- 🧘 **Restart Pasu, keep your services.** Processes keep running while Pasu restarts or
+  upgrades, and it picks them back up when it starts.
+- 🪶 **Featherweight.** One small Node package with two dependencies: no database, no build step,
+  no containers. Starts on boot with a single `pasu service install`.
+- 🏷️ **Built for more than one server.** Give each server a Pasu ID, and every email tells you
+  which one it came from.
 
 **Requirements:** Linux (Pasu tracks processes through `/proc`) and Node.js 20 or later.
 
