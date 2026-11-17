@@ -276,7 +276,7 @@ pasu help | version
 ## Running from source
 
 ```bash
-git clone <repo> && cd pasu
+git clone https://github.com/jungkumseok/pasu.git && cd pasu
 npm install
 npm start                       # same as `pasu`; commands go after `--`, e.g. npm start -- set-password
 npm test

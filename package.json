@@ -16,6 +16,14 @@
   ],
   "license": "MIT",
   "author": "Kumseok Jung <jungkumseok@gmail.com>",
+  "homepage": "https://github.com/jungkumseok/pasu#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jungkumseok/pasu.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jungkumseok/pasu/issues"
+  },
   "type": "module",
   "bin": {
     "pasu": "src/server.js"
