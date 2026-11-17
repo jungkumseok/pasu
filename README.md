@@ -14,9 +14,11 @@ restarts or upgrades.
 ## Quick start
 
 ```bash
-npm install -g pasu
+npm install -g pasud
 PASU_NAME="Pasu dev-box" pasu
 ```
+
+The npm package is called `pasud`; the command it installs is `pasu`.
 
 On first start it prints a one-time setup link:
 
@@ -151,7 +153,7 @@ pasu service print               # show the unit file without installing
 pasu service uninstall           # remove the service; managed processes keep running
 ```
 
-To upgrade, run `npm install -g pasu@latest`, then `sudo systemctl restart pasu`.
+To upgrade, run `npm install -g pasud@latest`, then `sudo systemctl restart pasu`.
 
 On reboot, every process stops with the machine. When Pasu comes back up, it starts the ones
 marked **Keep running** and leaves the others stopped.
